@@ -10,7 +10,7 @@ int main(){
 	char buff[1024];
 	ssize_t s = read(0,buff,sizeof(buff)-1);
 	buff[s] = 0;
-	sscanf(buff,"num1=%d&num2=%d",&num1,&num2);
+	sscanf(buff,"num1=%s&num2=%s",&num1,&num2);
 	printf("num1=%d num2=%d\n",num1,num2);
 	printf("<html>");
 	printf("<body>");

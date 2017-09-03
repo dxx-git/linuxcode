@@ -21,8 +21,8 @@ int startup(const char* ip,int port)
 	}
 	
 	//复用端口号
-	int opt = 1;
-	setsockopt(sock,SOL_SOCKET,SO_REUSEADDR,&opt,sizeof(opt));
+	//int opt = 1;
+	//setsockopt(sock,SOL_SOCKET,SO_REUSEADDR,&opt,sizeof(opt));
 
 	struct sockaddr_in local;
 	local.sin_family = AF_INET;
