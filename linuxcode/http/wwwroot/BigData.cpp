@@ -5,10 +5,12 @@
 *开发环境:Centos Linux/g++ v6.5.0
 ****************************************/
 #include<stdio.h>
+#include<iostream>
 #include<string.h>
-//#include"bigdata.h"
-int main(){
-	
+#include"BigData.h"
+
+int main()
+{	
 	char *num1;
 	char *num2;
 	char buff[4096];
@@ -27,19 +29,27 @@ int main(){
 	}
 	*tmp = '\0';
 	num2 = strchr(tmp+1,'=') + 1;
-	if(num2 == (char*)1){
+	if(num2 == (char*)1)
+	{
 		//参数错误
 		return 0;
 	}
 	
+	cout<<"<html>";
+	cout<<"<body>";
+	BigData str1(num1);
+	BigData str2(num2);
 	
-	
-	printf("<html>");
-	printf("<body>");
-	printf("%s\n",num1);	
-	printf("%s\n",num2);	
-	printf("</body>");
-	printf("</html>");
+	cout<<"<p>"<<"num1="<<str1<<"      "<<"num2="<<str2<<"</p>";
+	cout<<"<p>"<<str1<<" + "<<str2<<" = "<<str1+str2<<"</p>";
+	cout<<"<p>"<<str1<<"  -  "<<str2<<" = "<<str1-str2<<"</p>";
+	cout<<"<p>"<<str1<<"  *  "<<str2<<" = "<<str1*str2<<"</p>";
+	if(num2!=NULL)
+		cout<<"<p>"<<str1<<"  /  "<<str2<<" = "<<str1/str2<<"</p>";
+	else
+		cout<<"<p>"<<"error:num2==0"<<"</p>";
+	cout<<"</body>";
+	cout<<"</html>";
 
 	return 0;
 }
